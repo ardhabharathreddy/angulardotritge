@@ -1,0 +1,38 @@
+.row
+{
+    z-index: 1;
+}
+.buttongroup{
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    text-align: center;
+}
+.col-lg-4{
+    border: 0.1rem solid grey;
+    padding: 1em;
+}
+.col-lg-4:hover{
+    box-shadow: 0 0 0.5rem grey;
+}
+input:hover,button:hover{
+    box-shadow: 0 0 0.5rem grey;
+}
+.a{
+    height: 50%;
+}
+.b{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.red{
+    border: 0.1em solid black;
+    background-color: red;
+}
+.green{ 
+    border: 0.1em solid black;
+    background-color: green;
+}

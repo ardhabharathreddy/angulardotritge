@@ -1,0 +1,20 @@
+caption{
+    display: block;
+}
+.userdetails-col,.address-col{
+ border: 0.1rem solid rgb(233, 226, 226);
+ background-color: white;
+}
+.row{
+    margin: 0.5em;
+}
+.education-col:hover,.userdetails-col:hover,.address-col:hover{
+    box-shadow: 0 0 0.5em gray;
+}
+.buttons{
+ margin: 0;
+ width: auto;
+ display: flex;
+ justify-content: space-between;
+
+}

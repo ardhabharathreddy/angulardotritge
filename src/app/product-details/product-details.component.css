@@ -1,0 +1,16 @@
+img{
+    width: 70%;
+    height: 70%;
+}
+.img-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .detailed-product{
+    overflow: auto;
+    width:35%;
+    position: fixed;
+    top: 25%;
+    right: 7%;
+} */

@@ -1,0 +1,33 @@
+<!-- <p>{{employees|json}}</p> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <!-- <th>ADDRESS</th>
+            <th>Education</th> -->
+            <th>Role</th>
+            <th>ID</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.name}}</td>
+            <td>{{employee.mobile}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.dob}}</td>
+            <!-- <td>{{employee.address|json}}</td>
+            <td>{{employee.education|json}}</td> -->
+            <th>{{employee.role}}</th>
+            <td>{{employee.id}}</td>
+            <td><span><button class="btn btn-outline-light text-dark" (click)="edit(employee.id)"><i class="fa fa-edit"></i></button>
+                      <button class="btn btn-outline-light text-dark" (click)="view(employee.id)"><i class="fa fa-eye"></i></button>
+                      <button class="btn btn-outline-light text-dark" (click)="delete(employee.id)"><i class="fa fa-trash-o"></i></button>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,7 @@
+.btn-outline-light{
+    border: none;
+}
+.btn-outline-light:hover{
+    background-color:rgb(236, 234, 234);
+    border: none;
+}

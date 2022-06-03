@@ -1,0 +1,31 @@
+<div class="row">
+    <form action="" [formGroup]="vehicleForm" class="form">
+      <div class="form-group">
+        <input formControlName="Vehicle" type="text" class="form-control" id="Vehicle" placeholder="Vehicle" name="Vehicle">
+      </div>
+      <div class="form-group">
+        <input formControlName="manufacturer" type="text" class="form-control" id="Manufacturer" placeholder="Manufacturer" name="Manufacturer">
+      </div>
+      <div class="form-group">
+        <input formControlName="model" type="text" class="form-control" id="Model" placeholder="Model" name="Model">
+      </div>
+      <div class="form-group">
+        <input formControlName="type" type="text" class="form-control" id="Type" placeholder="Type" name="Type">
+      </div>
+      <div class="form-group">
+        <input formControlName="fuel" type="text" class="form-control" id="Fuel" placeholder="Fuel" name="Fuel">
+      </div>
+      <div class="form-group">
+        <input formControlName="color" type="text" class="form-control" id="Color" placeholder="Color" name="Color">
+      </div>
+      <!-- <div class="form-group">
+        <input formControlName="image" type="file" class="form-control" placeholder="Image" name="userImage" id="userImage">
+      </div> -->
+      <div class="form-group">
+        <input  formControlName="id" type="text" class="form-control" id="Id" placeholder="Id" name="Id">
+      </div>
+      <div class="button-center">
+      <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+      </div>
+    </form>
+  </div>

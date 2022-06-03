@@ -1,0 +1,96 @@
+
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+    <caption>Calculator</caption>
+    <input [(ngModel)]="x" class="form-control" placeholder="Operand1"><br>
+    <input [(ngModel)]="y" class="form-control " placeholder="Operand2"><br>
+    <div class="buttongroup">
+    <button type="button"class="btn btn-primary" (click)="add()">ADD <span *ngIf="c==0 || c">{{c}}</span></button>
+    <button type="button" class="btn btn-primary" (click)="sub()">SUB</button>
+    <button type="button"class="btn btn-primary" (click)="mul()">MUL</button>
+    <button type="button" class="btn btn-primary" (click)="div()">DIV</button>
+     </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+     <caption>Area&nbsp;Calculator</caption>
+     <input [(ngModel)]="height"placeholder="Height" class="form-control"><br>
+     <input [(ngModel)]="width" placeholder="Weight" class="form-control"><br>
+     <div class="buttongroup">
+     <button (click)="area()" class="btn btn-primary">Area</button>
+     <button (click)="perimeter()" class="btn btn-primary">perimeter</button>
+     </div>
+     <p *ngIf="areaAnswer>=0">Area is : {{areaAnswer}}</p>
+     <p *ngIf="perimeterAnswer>=0">perimeter is : {{perimeterAnswer}}</p>
+     </div>
+     <div class="col-lg-4 col-md-6">
+      <caption>Event&nbsp;Regestration</caption>
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="regestername" class="form-control" autocomplete="off"><br>
+      <button class="btn btn-primary" (click)="regester()">Regester</button><br>
+      <ul type="none">
+        <li *ngFor="let name of regesteredname">
+             {{name}}
+        </li>
+      </ul>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <caption>Cart</caption>
+        <label for="product">Product:</label>
+        <input type="text" id="product" placeholder="Product" [(ngModel)]="product" class="form-control"><br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" [(ngModel)]="quantity" class="form-control"><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" [(ngModel)]="price" class="form-control"><br>
+        <div class="buttongroup">
+        <button class="btn btn-primary" (click)="addToCart()">Add to cart</button>
+        <button type="reset" (click)="reset()" class="btn btn-primary">Reset</button>
+        </div>
+        <caption>Cart&nbsp;Items</caption>
+        <table class="table"> 
+             <tr *ngFor="let cartItem of cartItems">
+               <td>{{cartItem.productItem}}</td>
+               <td>{{cartItem.quantityInNumber}}</td>
+               <td>{{cartItem.priceOfProduct}}</td>
+             </tr>
+        </table>
+     </div>
+     <div class="col-lg-4 col-md-6">
+          <caption>Create&nbsp;Account</caption>
+          <label for="username">Name</label>
+          <input type="text" name="name" id="username" [(ngModel)]="username" class="form-control" placeholder="Name"><br>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Email"><br>
+          <label for="phone">Phone</label>
+          <input type="number" max=10 min=10 name="phone" id="phone" [(ngModel)]="phonenumber" class="form-control" placeholder="Phone Number"><br>
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" [(ngModel)]="city" class="form-control" placeholder="City"><br>
+          <div class="buttongroup">
+          <button type="submit" (click)="submit()" class="btn btn-primary">Sign Up</button>
+          <button type="reset" (click)="reset()" class="btn btn-primary">Reset</button>
+          </div>
+          <caption>List&nbsp;Of&nbsp;Users</caption>
+          <table class="table">
+               <thead>
+                    <tr>
+                         <th>Name</th>
+                         <th>Email</th>
+                         <th>Phone&nbsp;Number</th>
+                         <th>City
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let user of userDetails">
+                    <td>{{user.nameofuser}}</td>
+                    <td>{{user.emailaddress}}</td>
+                    <td>{{user.phonenumber}}</td>
+                    <td><address>{{user.city}}</address></td>
+               </tr>
+               </tbody>
+          </table>
+     </div>
+     <div class="col-lg-4 col-md-6 shape">
+          <div  class="b"><button class="btn-outline-light text-dark btn" (click)="reset1()"><span *ngIf="!default1">Show</span><span *ngIf="default1">Hide</span></button></div>
+          <div *ngIf="default1" (mouseenter)="change()" [ngClass]="isRed?'red':'green'" class="a"><p *ngIf="colorName">{{colorName}}</p></div>
+     </div>
+</div>

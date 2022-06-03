@@ -1,0 +1,37 @@
+body,html
+{
+    margin: 0%;
+}
+/* p{
+    display: flex;
+    justify-content: center;
+    
+}
+h1{
+    display: flex;
+    justify-content: center;
+    
+} */
+.a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+tr,td,th{
+    padding: 0.5rem;
+}
+.buttons1{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    height: 40rem;
+    overflow: auto;
+    margin-bottom: 1em;
+}
+.card:hover{
+    box-shadow: 0 0 0.5rem gray;
+}
+tr:hover{
+    box-shadow: 0 0 0.5rem gray;
+}

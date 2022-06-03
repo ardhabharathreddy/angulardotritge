@@ -1,0 +1,24 @@
+{
+    "paymentInfo":{
+        "Mode":"abc",
+        "Amount":"90$",
+        "Date":"22 Jan 2016",
+        "Status":"Success",
+        "Description":"abc"
+    },
+    "tranactionInformation":{
+       "Auto Transaction ID":12345678789,
+       "Card Processed":3497853495674,
+       "Gateway":"Test",
+       "Gateway Transaction ID":"o3474893u34oiu"
+    },
+    "invoices":[
+        {
+            "Date":"22 Jan 2016",
+            "INVOICE":"sj9876",
+            "Invoice Amount(USD)":90,
+            "payment applied(USD)":90,
+            "Balance":0
+        }
+    ]
+}

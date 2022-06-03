@@ -1,0 +1,71 @@
+<div class="parent">
+    <input placeholder="Search" type="text" class="form-control" [(ngModel)]="filterContent"><br>
+    <div class="button-center">
+    <label>SortBy</label>
+    <select name="toSort" id="toSort" [(ngModel)]="order">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+    </select>
+    <label>Order</label>
+    <select name="order" id="order" [(ngModel)]="sortBy">
+        <option value="Vehicle">Vehicle</option>
+        <option value="manufacturer">Manufacturer</option>
+        <option value="color">Color</option>
+        <option value="fuel">Fuel</option>
+    </select><br>
+    </div>
+    
+    <input placeholder="Page(1-10)" type="number" class="form-control" [(ngModel)]="page"><br>
+    <input placeholder="limit(10/20/30)" type="number" class="form-control" [(ngModel)]="limit"><br>
+    <div class="button-center">
+        <button class="btn btn-primary" (click)="filterAll()">FilterAll</button>
+    </div>
+    
+    <table class="table table-striped">
+    <thead>
+        <tr class="rowHeader">
+            <th>VEHICLE</th>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th class="fuelColumn">Fuel</th>
+            <th>Color</th>
+            <th>Image</th>
+            <th>Id</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicle of vehicles" class="abc">
+            <!-- <td>{{vehicle|json}}</td> -->
+            <!-- <ng-container  *ngIf="(vehicle.manufacturer == 'Honda' || vehicle.manufacturer == 'Ford') && (vehicle.fuel == 'Hybrid')"> -->
+            <td>{{vehicle.Vehicle}}</td>
+            <td>{{vehicle.manufacturer}}</td>
+            <td>{{vehicle.model|uppercase}}</td>
+            <td>{{vehicle.type}}</td>
+            <td>{{vehicle.fuel}}</td>
+            <td>{{vehicle.color}}</td>
+            <td><img src="{{vehicle.image}}" alt="Vehicle Image" width="50em" height="50em"></td>
+            <td>{{vehicle.id}}</td>
+            <td><button class="btn btn-outline-light text-dark" (click)="view(vehicle.id)"><i class="fa fa-eye"></i></button><button class="btn btn-outline-light text-dark" (click)="delete(vehicle.id)"><i class="fa fa-trash-o"></i></button></td>
+             <!-- </ng-container> -->
+        </tr>
+    </tbody>
+    </table>
+    <div class="row">
+    <ul class="pagination pagination-lg">
+        <li class="page-item"><a class="page-link" (click)="paged(1)">Previous</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(1)">1</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(2)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(3)">3</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(4)">4</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(5)">5</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(6)">6</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(7)">7</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(8)">8</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(9)">9</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(10)">10</a></li>
+        <li class="page-item"><a class="page-link" (click)="paged(10)">Next</a></li>
+    </ul>
+    </div>
+</div>

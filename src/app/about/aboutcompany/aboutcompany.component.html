@@ -1,0 +1,9 @@
+<div>abc</div>
+<ng-container>def</ng-container>
+<ng-container *ngTemplateOutlet="true?blockone:blocktwo"></ng-container>
+<ng-template #blockone>
+    <p>Its true block</p>
+</ng-template>
+<ng-template #blocktwo>
+    <p>Its false block</p>
+</ng-template>

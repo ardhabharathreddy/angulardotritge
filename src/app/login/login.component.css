@@ -1,0 +1,49 @@
+.container{
+    background-color: white;
+    width: 30%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    border-radius: 0.5em;
+}
+.submitbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.googlebutton{
+  margin-bottom: 1em;
+}
+.facebookbutton{
+    margin-bottom: 1em;
+}
+.parent{
+    background-color: rgb(84, 84, 182);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+h1{
+    font-weight: 100;
+}
+.btn-danger{
+    background-color: red;
+}
+/* .valid-feedback,.invalid-feedback{
+     visibility: hidden;
+} */
+p
+{
+    color: red;
+    font-weight: 100;
+    font-size: smaller;
+
+}

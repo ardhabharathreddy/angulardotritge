@@ -1,0 +1,28 @@
+.card{
+    height: 60%;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    overflow: auto;
+}
+.buttons{
+    display: flex;
+}
+.card:hover{
+    box-shadow: 0 0 1em gray;
+}
+.row{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+img{
+    width: 10em;
+    height: 10em;
+}
+h5{
+    text-align: center;
+}

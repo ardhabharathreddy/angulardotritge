@@ -1,0 +1,48 @@
+<div class="row">
+    <form action="" [formGroup]="accountForm" class="form">
+      <div class="form-group">
+        
+        <input formControlName="createdAt" type="text" class="form-control" id="createdAt" placeholder="CreatedAt" name="createdAt">
+      </div>
+      <div class="form-group">
+        <input  formControlName="account_name" type="text" class="form-control" id="accountName" placeholder="Account Name" name="accountName">
+      </div>
+      <div class="form-group">
+        
+        <input formControlName="available_balance" type="text" class="form-control" id="availableBalance" placeholder="Available Balance" name="availableBalance">
+      </div>
+      <div class="form-group">
+        
+        <input formControlName="currency" type="text" class="form-control" id="Currency" placeholder="Currency" name="Currency">
+      </div>
+      <!-- <div class="form-group">
+        
+        <input  formControlName="createdAt" type="file" class="form-control" name="userImage" id="userImage">
+      </div> -->
+      <div class="form-group">
+        
+        <input  formControlName="account_number" type="text" class="form-control" id="accountNumber" placeholder="Account Number" name="accountNumber">
+      </div>
+      <div class="form-group">
+        
+        <input  formControlName="id" type="text" class="form-control" id="Id" placeholder="Id" name="Id">
+      </div>
+      <button type="submit" class="btn btn-outline-light text-dark" (click)="add()">+&nbsp;<span>Add card</span></button>
+      <div class="form-group" formArrayName="card">
+        <div *ngFor="let card of cardFormArray.controls;let i=index">
+          <div formGroupName="{{i}}">
+            <input  formControlName="cardno" type="text" class="form-control" placeholder="cardno" name="cardno">
+            <input  formControlName="expiry" type="text" class="form-control" placeholder="expiry" name="expiry">
+            <input  formControlName="cvv" type="text" class="form-control" placeholder="cvv" name="cvv">
+            <button type="submit" class="btn btn-primary" (click)="delet(i)">Delet</button>
+          </div>
+        </div>
+      </div>
+      <div class="button-center">
+        
+      </div>
+      <div class="button-center">
+      <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+      </div>
+    </form>
+  </div>

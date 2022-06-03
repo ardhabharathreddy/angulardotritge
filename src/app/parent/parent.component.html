@@ -1,0 +1,8 @@
+<!-- <p>Child works</p>
+<app-child></app-child> -->
+<p>This is Parent to child:</p>
+<input type="text" [(ngModel)]="c" class="form-control">
+<!-- <app-child [a]="a"></app-child> -->
+<p>This is child to parent</p>
+<p>{{b}}</p>
+<app-child [a]="c" (b)="catch($event)"></app-child>

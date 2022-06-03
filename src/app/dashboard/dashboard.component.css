@@ -1,0 +1,102 @@
+.parent{
+    background-color: rgb(115, 189, 214);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    background-color: white;
+    display: flex;
+    width: 90%;
+    height: 80%;
+    box-shadow: 0 0 2em grey;
+}
+.menu{
+    height: 100%;
+    width: 20%;
+    padding-right: 2em;
+    overflow: auto;
+}
+img[alt="Profile"]{
+    height: 8em;
+    width: 8em;
+    margin-top: 0.5em;
+    border-radius: 50%;
+    border: 0.2rem solid rgb(115, 189, 214);
+}
+img[alt="Profile"]:hover{
+    width: 16em;
+    border-radius: 0;
+    box-shadow: 0 0 1em grey;
+}
+li{
+    font-weight: 100;
+    font-size: smaller;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+}
+.userdetails{
+    text-align: center;
+}
+hr{
+    background-color: rgb(115, 189, 214);
+    height: 0.1em;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-primary{
+    background-color: rgb(115, 189, 214);
+    border-color: rgb(115, 189, 214);
+}
+.profileImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    height: 100%;
+    width: 80%;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: rgb(236, 234, 234);
+    overflow: auto;
+}
+.contentTop{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgb(236, 234, 234);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 0.5rem;
+}
+button:hover{
+    box-shadow: 0 0 1em gray;
+}
+button:visited{
+    background-color: purple;
+}
+li:hover{
+    cursor: pointer;
+}
+.fa{
+    position: relative;
+    display: inline-block;
+}
+.badge{
+    
+    position: absolute;
+    font-size: xx-small;
+    top: -0.87em;
+    right: -0.87em;
+    border-radius: 50%;
+}

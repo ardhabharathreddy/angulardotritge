@@ -1,0 +1,26 @@
+<input placeholder="Search"  type="number" matinput class="form-control" [(ngModel)]="filterContent" (keypress)="filter()"><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>CreatedAt</th>
+            <th>Account Name</th>
+            <th>Available Balance</th>
+            <th>Currency</th>
+            <th>user-Image</th>
+            <th>Account Number</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of user">
+            <td>{{data.createdAt}}</td>
+            <td>{{data.account_name}}</td>
+            <td>{{data.available_balance}}</td>
+            <td>{{data.currency}}</td>
+            <td><img src="{{data.user_image}}" alt="img" width="50em" height="50em"></td>
+            <td>{{data.account_number}}</td>
+            <td>{{data.id}}</td>
+        </tr>
+    </tbody>
+</table>
+<p>{{user.card|json}}</p>

@@ -1,0 +1,87 @@
+<!-- <div class="row">
+    <div class="row image-row">
+        <img src="{{product.image}}" alt="Product image">
+    </div>
+</div> -->
+<!-- <pre>{{childProduct|json}}</pre> -->
+
+<ng-content *ngTemplateOutlet="childProduct==null ? blocktwo : blockone"></ng-content>
+<ng-template #blockone>
+    <div class="row detailed-product">
+        <div class="row">
+            <div class="col img-col">
+            <img src="{{childProduct.image}}" alt="Product image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>ID</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.id}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>TITLE</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.title}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>PRICE</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.price}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>DESCRIPTION</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.description}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>category</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.category}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Rating</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.rating.rate}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Count</h5>
+            </div>
+            <div class="col">
+                <p>:{{childProduct.rating.count}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary">Buy</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" (click)="delete(childProduct.id)">Delete</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" (click)="cartCount(childProduct.id)">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #blocktwo>
+    <pre>{{childProduct|json}}</pre>
+</ng-template>

@@ -1,0 +1,29 @@
+<div class="parent row">
+    <div  class="products col-lg-6 colmd-6 col-sm-6 col-6">
+        <div *ngFor="let product of products" (click)="send(product)">
+            <div class="card" style="width:100%">
+                <div class="img-col">
+                    <img class="card-img-top" src="{{product.image}}" alt="Card image">
+                </div>>
+                <div class="card-body">
+                    <h5>ID:{{product.id}}</h5>
+                    <h5>TITLE:{{product.title}}</h5>
+                    <h5>Price:{{product.price|currency:'India'}}</h5>
+                    <p>Description:{{product.description}}</p>
+                    <h5>Category:{{product.category}}</h5>
+                    <h5>Rating-Rate:{{product.rating.rate}}</h5>
+                    <h5>Rating-Count:{{product.rating.count}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details col-lg-6 colmd-6 col-sm-6 col-6">
+        <div class="row">
+            <app-product-details [childProduct]="detailedProduct"></app-product-details>
+        </div>
+        <div class="row buttons">
+
+        </div>
+    </div>
+</div>
+   

@@ -1,0 +1,44 @@
+<div class="parent">
+    <div class="child">
+      <div class="menu">
+        <ul type="none">
+            <li><div class="profileImage">
+                <img src="http://placeimg.com/640/480/transport" alt="Profile">
+            </div></li> 
+            <li class="userdetails">Bharath Reddy <i class="fa" style="font-size:24px" routerLink="cart">&#xf07a;<span class="badge bg-danger">{{cartItemCount}}</span></i>
+                </li>
+            <li class="userdetails">ardhabharath@gmail.com</li>
+            <hr>
+            <li class="menuitems" routerLink="interpolation"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;INTERPOLATION</li>
+            <li class="menuitems" routerLink="eventbinding"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;EVENT BINDING</li>
+            <li class="menuitems" routerLink="apps"><span class="glyphicon glyphicon-sunglasses"></span>&nbsp;&nbsp;APPS</li>
+            <li class="menuitems" routerLink="vehiclesummary"><span class="glyphicon glyphicon-cutlery"></span>&nbsp;&nbsp;VEHICLE SUMMARY</li>
+            <li class="menuitems" routerLink="home"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;HOME</li>
+            <li class="menuitems" routerLink="accounts"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;ACCOUNTS</li>
+            <li class="menuitems" routerLink="flipkartproduct"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;FLIPKART</li>
+            <li class="menuitems" routerLink="product-summary"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;Product Summary</li>
+            <li class="menuitems" routerLink="createvehicle"><span class="glyphicon glyphicon-cutlery"></span>&nbsp;&nbsp;CREATE VEHICLE</li>
+            <li class="menuitems" routerLink="createaccount"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;CREATE ACCOUNT</li>
+            <li class="menuitems" routerLink="employee"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;EMPLOYEE</li>
+            <li class="menuitems" routerLink="createemployee"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;CREATE EMPLOYEE</li>
+            <li class="menuitems" routerLink="aboutcompany"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;About Company</li>
+            <li class="menuitems" routerLink="contact"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;Contact Us</li>
+            <li class="menuitems" routerLink="parent"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;Parent</li>
+            <li class="menuitems" routerLink="siblingone"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;Sibling One</li>
+            <li class="menuitems" routerLink="siblingtwo"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;Sibling two</li>
+            <li class="menuitems" routerLink="payment"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;&nbsp;Mock Payments</li>
+            <li class="menuitems"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;EXTRA SERVICES</li>
+            <hr>
+            <!-- routerLink="/login" -->
+            <li><div class="btn"><button type="submit" class="btn btn-primary btn-block" (click)="logout()">LOGOUT</button> </div></li>
+        </ul>
+      </div>
+        <div class="content">
+            <div class="contentTop">
+                <h4>Presonal Progress</h4>
+                <button type="button" class="btn btn-primary">CONTACT SUPPORT</button>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

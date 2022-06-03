@@ -1,0 +1,44 @@
+<!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>description</th>
+            <th>category</th>
+            <th>image</th>
+            <th>Rating-rate</th>
+            <th>Rating-count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.category}}</td>
+            <td><img src="{{product.image}}" alt="img" width="50em" height="50em"></td>
+            <td>{{product.rating.rate}}</td>
+            <td>{{product.rating.count}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<div class="row">
+  <div class="card col-lg-3 col-md-6 col-sm-12 col-12" *ngFor="let product of products">
+    <img class="card-img-top" src="{{product.image}}" alt="Card image">
+    <div class="card-body">
+      <h5>ID:{{product.id}}</h5>
+      <h5>TITLE:{{product.title}}</h5>
+      <h5>Price:{{product.price|currency:'India'}}</h5>
+      <p>Description:{{product.description}}</p>
+      <h5>Category:{{product.category}}</h5>
+      <h5>Rating-Rate:{{product.rating.rate}}</h5>
+      <h5>Rating-Count:{{product.rating.count}}</h5>
+      <div class="buttons">
+        <button class="btn btn-primary">BUY</button>
+        <button class="btn btn-primary">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+</div>

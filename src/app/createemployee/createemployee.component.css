@@ -1,0 +1,33 @@
+.row,.button-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 50%;
+}
+.button-center{
+    margin-bottom: 1em  ;
+}
+span{
+    font-weight: 100;
+    font-size: smaller;
+}
+.btn-outline-light{
+    border: none;
+}
+.btn-outline-light:hover{
+    border: none;
+    background-color:  rgb(236, 234, 234);
+}
+p
+{
+    color: red;
+    font-weight: 100;
+    font-size: smaller;
+
+}
+.redbox{
+    border:0.1em solid red;
+}
+

@@ -1,0 +1,36 @@
+   <div class="parent">
+    <div class="container">
+    <form class="was-validated" [formGroup]="loginForm">
+      <div class="heading"><h1>Sign In</h1></div>
+      <div class="form-group">
+        <input formControlName="email" type="text" class="form-control" id="uname" placeholder="Email address" name="uname" required>
+        <div *ngIf="loginForm.get('email')?.touched">
+          <p *ngIf="loginForm.get('email')?.errors?.['required']">Email Required</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input formControlName="password" type="password" class="form-control" id="pwd" placeholder="password" name="pswd" required>
+        <div *ngIf="loginForm.get('password')?.touched">
+          <p *ngIf="loginForm.get('password')?.errors?.['required']">Password Required</p>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" name="remember" required>&nbsp;&nbsp;&nbsp;Remember Password
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Check this checkbox to continue.</div>
+        </label>
+      </div>
+      <!-- routerLink="/dashboard" ===> this is used in button to open dashboard -->
+      <div class="submitbutton">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid" (click)="login()">Sign In</button>
+      </div>
+      <hr>
+      <div class="submitbutton googlebutton"><a href="https://www.google.com/" class="btn btn-danger btn-block">SIGN IN WITH GOOGLE</a></div>
+      <div class="submitbutton facebookbutton"><a href="https://www.facebook.com" class="btn btn-primary btn-block">SIGN IN WITH FACEBOOK</a></div>
+      
+      
+    </form>
+  </div>
+</div>
+

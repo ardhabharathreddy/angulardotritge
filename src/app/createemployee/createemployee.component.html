@@ -1,0 +1,93 @@
+<div class="row">
+    <form action="" [formGroup]="employeeForm" class="form">
+      <div class="form-group">
+        <input formControlName="name" [ngClass]="employeeForm.get('name')?.touched && employeeForm.get('name')?.invalid ? 'redbox' : 'false' " type="text" class="form-control" id="name" placeholder="Name" name="Name" autocomplete="off">
+        <div *ngIf="employeeForm.get('name')?.touched && employeeForm.get('name')?.invalid">
+          <p *ngIf="employeeForm.get('name')?.errors?.['required']">This field is required</p>
+          <p *ngIf="employeeForm.get('name')?.errors?.['minlength']">Enter three characters minimum</p>
+          <p *ngIf="employeeForm.get('name')?.errors?.['maxlength']">Maximum 10 characters</p>
+        </div>
+        <!-- <p>touches:{{employeeForm.get("name")?.touched}}</p>
+        <p>dirty:{{employeeForm.get("name")?.dirty}}</p>
+        <p>value:{{employeeForm.get("name")?.value}}</p>
+        <p>invalid:{{employeeForm.get("name")?.invalid}}</p>
+        <p>errors{{employeeForm.get("name")?.errors|json}}</p> -->
+      </div>
+      <div class="form-group" >   
+        <input class="mobileiput" [ngClass]=" employeeForm.get('mobile')?.touched && employeeForm.get('mobile')?.invalid ? 'redbox' : 'false'" formControlName="mobile" maxlength="10" type="text" class="form-control" id="mobile" placeholder="Mobile" name="mobile">
+      </div>
+      <div *ngIf="employeeForm.get('mobile')?.touched && employeeForm.get('mobile')?.invalid">
+          <p *ngIf="employeeForm.get('mobile')?.errors?.['required']">This field is required</p>
+          <p *ngIf="employeeForm.get('mobile')?.errors?.['minlength']">Mobile Number must contain 10 digits</p>
+          <p *ngIf="employeeForm.get('mobile')?.errors?.['maxlength']">Mobile Number must contain 10 digits</p>
+      </div>
+      <div class="form-group">
+        <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email" name="email">
+      </div>
+      <div class="form-group">
+        <input formControlName="dob" type="date" class="form-control" id="DOB" placeholder="DOB" name="DOB">
+      </div>
+      <div class="form-group" formGroupName="address">
+        <input formControlName="addressline" type="text" class="form-control" id="addressLine" placeholder="AddressLine" name="addressLine">
+        <input formControlName="city" type="text" class="form-control" id="city" placeholder="city" name="city">
+        <input formControlName="state" type="text" class="form-control" id="state" placeholder="state" name="state">
+        <input formControlName="pincode" type="text" class="form-control" id="pin" placeholder="pin" name="pin">
+        <div *ngIf="employeeForm.get('address')?.get('pincode')?.touched && employeeForm.get('address')?.get('pincode')?.invalid">
+            <p *ngIf="employeeForm.get('address')?.get('pincode')?.errors?.['required']">This Field is Required</p>
+            <p *ngIf="employeeForm.get('address')?.get('pincode')?.errors?.['minlength']">Invalid Pincode</p>
+            <p *ngIf="employeeForm.get('address')?.get('pincode')?.errors?.['maxlength']">Invalid pincode</p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-light text-dark" (click)="add()" name="Education" title="Education">+</button><span>Add More</span>
+      <div class="form-group" formArrayName="education">
+        <div *ngFor="let education of educationFormArray.controls;let i=index">
+          <div formGroupName="{{i}}">
+              <input formControlName="qualification" type="text" class="form-control" id="qualification" placeholder="qualification" name="qualification">
+              <input formControlName="year" type="text" class="form-control" id="year" placeholder="year" name="year">
+              <input formControlName="percentage" type="text" class="form-control" id="percentage" placeholder="percentage" name="percentage">
+              <div *ngIf="educationFormArray.controls[i]?.get('percentage')?.touched && educationFormArray.controls[i]?.get('percentage')?.invalid">
+                <p *ngIf="educationFormArray.controls[i]?.get('percentage')?.errors?.['required']">This Field is Required</p>
+                <p *ngIf="educationFormArray.controls[i]?.get('percentage')?.errors?.['min']">Invalid percentage</p>
+                <p *ngIf="educationFormArray.controls[i]?.get('percentage')?.errors?.['max']">Invalid percentage</p>
+            </div>
+              <div class="button-center button-spacing">
+                <button type="submit" class="btn btn-primary" (click)="delet(i)">Delete</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="form-group">
+        <input  formControlName="role" type="text" class="form-control" id="role" placeholder="Role" name="role">
+      </div> -->
+      <div class="form-group checkbox-role">
+        <label>Role:&nbsp;</label>
+        <label for="frontEnd">Frontend</label>
+        <input formControlName="role" type="radio" id="frontEnd" value="frontEnd"><label>&nbsp;&nbsp;&nbsp;</label>
+        <label for="backEnd">BackEnd</label>
+        <input formControlName="role" type="radio" id="backEnd" value="backEnd">
+      </div>
+      <div *ngIf="employeeForm.get('role')?.value=='frontEnd'">
+        <div class="form-group">
+          <input formControlName="html"  type="text" class="form-control" id="html" placeholder="html" >
+        </div>
+        <div class="form-group">
+          <input formControlName="angular"  type="text" class="form-control" id="angular" placeholder="Angular" >
+        </div>
+      </div>
+      <div *ngIf="employeeForm.get('role')?.value=='backEnd'">
+        <div class="form-group">
+          <input formControlName="java" type="text" class="form-control" id="java" placeholder="java" >
+        </div>
+        <div class="form-group">
+          <input formControlName="sql" type="text" class="form-control" id="sql" placeholder="sql" >
+        </div>
+      </div>
+      <div class="form-group">
+        <input  formControlName="id" type="text" class="form-control" id="id" placeholder="ID" >
+      </div>
+      <div class="button-center">
+      <button type="submit" class="btn btn-primary" (click)="submit()" [disabled]="employeeForm.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+  <pre>{{employeeDetails|json}}</pre>
